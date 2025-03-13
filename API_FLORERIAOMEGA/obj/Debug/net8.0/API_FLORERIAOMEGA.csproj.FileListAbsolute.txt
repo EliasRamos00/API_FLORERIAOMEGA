@@ -58,3 +58,4 @@ C:\Users\elias\source\repos\API_FLORERIAOMEGA\API_FLORERIAOMEGA\obj\Debug\net8.0
 C:\Users\elias\source\repos\API_FLORERIAOMEGA\API_FLORERIAOMEGA\obj\Debug\net8.0\API_FLORERIAOMEGA.pdb
 C:\Users\elias\source\repos\API_FLORERIAOMEGA\API_FLORERIAOMEGA\obj\Debug\net8.0\API_FLORERIAOMEGA.genruntimeconfig.cache
 C:\Users\elias\source\repos\API_FLORERIAOMEGA\API_FLORERIAOMEGA\obj\Debug\net8.0\ref\API_FLORERIAOMEGA.dll
+C:\Users\elias\source\repos\API_FLORERIAOMEGA\API_FLORERIAOMEGA\obj\Debug\net8.0\API_FLORERIAOMEGA.sourcelink.json
