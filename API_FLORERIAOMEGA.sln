@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_FLORERIAOMEGA", "API_FLORERIAOMEGA\API_FLORERIAOMEGA.csproj", "{FDB261A6-9853-482E-AD75-ED06F7BEBFAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDB261A6-9853-482E-AD75-ED06F7BEBFAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDB261A6-9853-482E-AD75-ED06F7BEBFAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDB261A6-9853-482E-AD75-ED06F7BEBFAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDB261A6-9853-482E-AD75-ED06F7BEBFAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A138453-4CEC-453F-A88B-CFCDF400D73B}
+	EndGlobalSection
+EndGlobal
