@@ -7,9 +7,11 @@ namespace API_FLORERIAOMEGA.Services
     {
         private readonly string _connectionString;
 
+
+
         public DatabaseService(IConfiguration config)
         {
-            _connectionString = config.GetConnectionString("DBCLOUD");
+            _connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");
         }
 
         public IDbConnection CrearConexion() => new MySqlConnection(_connectionString);

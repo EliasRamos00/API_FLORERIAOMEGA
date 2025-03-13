@@ -41,6 +41,7 @@ C:\Users\elias\source\repos\API_FLORERIAOMEGA\API_FLORERIAOMEGA\obj\Debug\net8.0
 C:\Users\elias\source\repos\API_FLORERIAOMEGA\API_FLORERIAOMEGA\obj\Debug\net8.0\API_FLORERIAOMEGA.csproj.CoreCompileInputs.cache
 C:\Users\elias\source\repos\API_FLORERIAOMEGA\API_FLORERIAOMEGA\obj\Debug\net8.0\API_FLORERIAOMEGA.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\elias\source\repos\API_FLORERIAOMEGA\API_FLORERIAOMEGA\obj\Debug\net8.0\API_FLORERIAOMEGA.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\elias\source\repos\API_FLORERIAOMEGA\API_FLORERIAOMEGA\obj\Debug\net8.0\API_FLORERIAOMEGA.sourcelink.json
 C:\Users\elias\source\repos\API_FLORERIAOMEGA\API_FLORERIAOMEGA\obj\Debug\net8.0\scopedcss\bundle\API_FLORERIAOMEGA.styles.css
 C:\Users\elias\source\repos\API_FLORERIAOMEGA\API_FLORERIAOMEGA\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\elias\source\repos\API_FLORERIAOMEGA\API_FLORERIAOMEGA\obj\Debug\net8.0\staticwebassets.development.json
@@ -58,4 +59,3 @@ C:\Users\elias\source\repos\API_FLORERIAOMEGA\API_FLORERIAOMEGA\obj\Debug\net8.0
 C:\Users\elias\source\repos\API_FLORERIAOMEGA\API_FLORERIAOMEGA\obj\Debug\net8.0\API_FLORERIAOMEGA.pdb
 C:\Users\elias\source\repos\API_FLORERIAOMEGA\API_FLORERIAOMEGA\obj\Debug\net8.0\API_FLORERIAOMEGA.genruntimeconfig.cache
 C:\Users\elias\source\repos\API_FLORERIAOMEGA\API_FLORERIAOMEGA\obj\Debug\net8.0\ref\API_FLORERIAOMEGA.dll
-C:\Users\elias\source\repos\API_FLORERIAOMEGA\API_FLORERIAOMEGA\obj\Debug\net8.0\API_FLORERIAOMEGA.sourcelink.json
