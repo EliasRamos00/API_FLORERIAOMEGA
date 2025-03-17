@@ -1,4 +1,6 @@
 # Visual Studio
+bin/
+obj/
 .vs/
 .vscode/
 *.user
@@ -7,3 +9,4 @@
 *.userprefs
 *.vspscc
 *.vssscc
+
