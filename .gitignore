@@ -10,3 +10,5 @@ obj/
 *.vspscc
 *.vssscc
 
+API_FLORERIAOMEGA/bin/Debug/net8.0/API_FLORERIAOMEGA.exe
+/API_FLORERIAOMEGA/bin
