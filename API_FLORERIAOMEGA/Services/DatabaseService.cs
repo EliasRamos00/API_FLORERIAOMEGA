@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Dapper;
+using MySql.Data.MySqlClient;
 using System.Data;
 
 namespace API_FLORERIAOMEGA.Services
@@ -16,5 +17,6 @@ namespace API_FLORERIAOMEGA.Services
 
         public IDbConnection CrearConexion() => new MySqlConnection(_connectionString);
 
+       
     }
 }

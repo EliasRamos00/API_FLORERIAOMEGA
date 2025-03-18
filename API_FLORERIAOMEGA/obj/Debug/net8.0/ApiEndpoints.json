@@ -1,5 +1,84 @@
 [
   {
+    "ContainingType": "API_FLORERIAOMEGA.Controllers.CArticulos",
+    "Method": "GetProductos",
+    "RelativePath": "api/CArticulos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_FLORERIAOMEGA.Controllers.CArticulos",
+    "Method": "CrearProducto",
+    "RelativePath": "api/CArticulos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "producto",
+        "Type": "API_FLORERIAOMEGA.Models.MArticulos",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_FLORERIAOMEGA.Controllers.CArticulos",
+    "Method": "GetProducto",
+    "RelativePath": "api/CArticulos/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_FLORERIAOMEGA.Controllers.CArticulos",
+    "Method": "UpdateProducto",
+    "RelativePath": "api/CArticulos/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "producto",
+        "Type": "API_FLORERIAOMEGA.Models.MArticulos",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_FLORERIAOMEGA.Controllers.CArticulos",
+    "Method": "DeleteProducto",
+    "RelativePath": "api/CArticulos/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "API_FLORERIAOMEGA.Controllers.CCategorias",
     "Method": "GetSucursales",
     "RelativePath": "api/CCategorias",
