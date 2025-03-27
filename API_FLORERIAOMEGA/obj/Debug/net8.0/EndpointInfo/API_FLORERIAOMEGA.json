@@ -46,6 +46,18 @@
         }
       }
     },
+    "/api/CArticulos/productos/inventario": {
+      "get": {
+        "tags": [
+          "CArticulos"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/CArticulos/{id}": {
       "get": {
         "tags": [

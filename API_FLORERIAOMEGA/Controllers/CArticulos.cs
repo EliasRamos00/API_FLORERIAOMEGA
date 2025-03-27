@@ -11,6 +11,7 @@ namespace API_FLORERIAOMEGA.Controllers
 
         private readonly RArticulos _repo;
 
+
         public CArticulos(RArticulos repo)
         {
             _repo = repo;
@@ -22,6 +23,14 @@ namespace API_FLORERIAOMEGA.Controllers
             var productos = await _repo.ObtenerProductosAsync();
             return Ok(productos);
         }
+
+        [HttpGet("productos/inventario")]
+        public async Task<IActionResult> GetProductosInventario()
+        {
+            var productos = await _repo.ObtenerProductosInventarioAsync();
+            return Ok(productos);
+        }
+
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProducto(int id)

@@ -79,6 +79,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "API_FLORERIAOMEGA.Controllers.CArticulos",
+    "Method": "GetProductosInventario",
+    "RelativePath": "api/CArticulos/productos/inventario",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "API_FLORERIAOMEGA.Controllers.CCategorias",
     "Method": "GetSucursales",
     "RelativePath": "api/CCategorias",

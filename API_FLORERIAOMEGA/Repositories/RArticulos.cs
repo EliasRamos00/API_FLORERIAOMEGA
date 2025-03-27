@@ -20,6 +20,16 @@ namespace API_FLORERIAOMEGA.Repositories
             return await conexion.QueryAsync<MArticulos>("SELECT * FROM Articulos");
         }
 
+        public async Task<IEnumerable<MArticulosDTO>> ObtenerProductosInventarioAsync()
+        {
+            using var conexion = _dbService.CrearConexion();
+            return await conexion.QueryAsync<MArticulosDTO>("SELECT * FROM " +
+                "Articulos A " +
+                "INNER JOIN Inventarios I " +
+                "ON A.idArticulo = I.idArticulo ");
+        }
+
+
         public async Task<MArticulos> ObtenerProductoPorIdAsync(int id)
         {
             using var conexion = _dbService.CrearConexion();
