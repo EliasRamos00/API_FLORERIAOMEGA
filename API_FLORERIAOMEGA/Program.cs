@@ -13,6 +13,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<DatabaseService>();
 builder.Services.AddScoped<RCategorias>();
 builder.Services.AddScoped<RArticulos>();
+builder.Services.AddScoped<RUsuarios>();
+
 
 
 var app = builder.Build();
