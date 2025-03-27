@@ -109,6 +109,48 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "API_FLORERIAOMEGA.Controllers.CVentas",
+    "Method": "GetVentas",
+    "RelativePath": "api/CVentas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_FLORERIAOMEGA.Controllers.CVentas",
+    "Method": "GetVenta",
+    "RelativePath": "api/CVentas/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_FLORERIAOMEGA.Controllers.CVentas",
+    "Method": "CrearVentaAsync",
+    "RelativePath": "api/CVentas/crear",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ventaDTO",
+        "Type": "API_FLORERIAOMEGA.Models.MVentaDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "API_FLORERIAOMEGA.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",

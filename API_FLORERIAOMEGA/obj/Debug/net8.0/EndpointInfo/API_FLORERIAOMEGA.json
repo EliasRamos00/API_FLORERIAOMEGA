@@ -166,6 +166,72 @@
         }
       }
     },
+    "/api/CVentas": {
+      "get": {
+        "tags": [
+          "CVentas"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/CVentas/crear": {
+      "post": {
+        "tags": [
+          "CVentas"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MVentaDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MVentaDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MVentaDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/CVentas/{id}": {
+      "get": {
+        "tags": [
+          "CVentas"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/WeatherForecast": {
       "get": {
         "tags": [
@@ -236,6 +302,74 @@
             "nullable": true
           },
           "idCategoria": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MVentaDTO": {
+        "type": "object",
+        "properties": {
+          "venta": {
+            "$ref": "#/components/schemas/MVentas"
+          },
+          "detalle": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MVentaDetalle"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MVentaDetalle": {
+        "type": "object",
+        "properties": {
+          "idArticulo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idVenta": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "precioVenta": {
+            "type": "number",
+            "format": "double"
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MVentas": {
+        "type": "object",
+        "properties": {
+          "idVenta": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "total": {
+            "type": "number",
+            "format": "double"
+          },
+          "fechaHora": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "vendedor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tieneFactura": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idSucursal": {
             "type": "integer",
             "format": "int32"
           }
