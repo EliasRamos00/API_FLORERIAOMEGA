@@ -56,7 +56,7 @@
       },
       {
         "Name": "producto",
-        "Type": "API_FLORERIAOMEGA.Models.MArticulos",
+        "Type": "API_FLORERIAOMEGA.Models.MArticulosDTO",
         "IsRequired": true
       }
     ],

@@ -99,17 +99,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/MArticulos"
+                "$ref": "#/components/schemas/MArticulosDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/MArticulos"
+                "$ref": "#/components/schemas/MArticulosDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/MArticulos"
+                "$ref": "#/components/schemas/MArticulosDTO"
               }
             }
           }
@@ -304,6 +304,69 @@
           "idCategoria": {
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MArticulosDTO": {
+        "type": "object",
+        "properties": {
+          "idArticulo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "foto": {
+            "type": "string",
+            "nullable": true
+          },
+          "color": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "tamanio": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoBarras": {
+            "type": "string",
+            "nullable": true
+          },
+          "idCategoria": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idInventario": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "stock": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "min": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "max": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "precioVenta": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "precioCompra": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
           }
         },
         "additionalProperties": false

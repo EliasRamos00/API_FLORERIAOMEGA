@@ -61,33 +61,73 @@ namespace API_FLORERIAOMEGA.Repositories
             }
         }
 
-        public async Task<bool> UpdateProductoAsync(MArticulos producto)
+        public async Task<bool> UpdateProductoAsync(MArticulosDTO producto)
         {
             using var conexion = _dbService.CrearConexion();
-            var query = "UPDATE Articulos SET " +
-                        "Foto = @Foto, " +
-                        "Color = @Color, " +
-                        "Descripcion = @Descripcion, " +
-                        "Tamanio = @Tamanio, " +
-                        "CodigoBarras = @CodigoBarras, " +
-                        "IdCategoria = @IdCategoria " +
-                        "WHERE idArticulo = @idArticulo";
+            conexion.Open();              
+            using var transaccion = conexion.BeginTransaction();
 
-            // Ejecutar el UPDATE y verificar cuántas filas fueron afectadas
-            var filasAfectadas = await conexion.ExecuteAsync(query, new
+            try
             {
-                producto.Foto,
-                producto.Color,
-                producto.Descripcion,
-                producto.Tamanio,
-                producto.CodigoBarras,
-                producto.IdCategoria,
-                producto.idArticulo  // Este es el ID del producto que estamos actualizando
-            });
+                var queryArticulo = @"
+            UPDATE Articulos SET 
+                Foto = @Foto, 
+                Color = @Color, 
+                Descripcion = @Descripcion, 
+                Tamanio = @Tamanio, 
+                CodigoBarras = @CodigoBarras, 
+                IdCategoria = @IdCategoria
+            WHERE idArticulo = @idArticulo";
 
-            // Si se actualizaron filas (filasAfectadas > 0), significa que el producto se actualizó correctamente
-            return filasAfectadas > 0;
+                var filasAfectadasArticulos = await conexion.ExecuteAsync(queryArticulo, new
+                {
+                    producto.Foto,
+                    producto.Color,
+                    producto.Descripcion,
+                    producto.Tamanio,
+                    producto.CodigoBarras,
+                    producto.IdCategoria,
+                    producto.idArticulo
+                }, transaction: transaccion);
+
+                var queryInventario = @"
+            UPDATE Inventario SET 
+                Stock = @Stock, 
+                Min = @Min, 
+                Max = @Max, 
+                PrecioVenta = @PrecioVenta, 
+                PrecioCompra = @PrecioCompra
+            WHERE idInventario = @idInventario";
+
+                var filasAfectadasInventario = await conexion.ExecuteAsync(queryInventario, new
+                {
+                    producto.Stock,
+                    producto.Min,
+                    producto.Max,
+                    producto.PrecioVenta,
+                    producto.PrecioCompra,
+                    producto.idInventario
+                }, transaction: transaccion);
+
+                // Verificamos si ambas actualizaciones afectaron filas
+                if (filasAfectadasArticulos > 0 && filasAfectadasInventario > 0)
+                {
+                     transaccion.Commit();
+                    return true;
+                }
+                else
+                {
+                     transaccion.Rollback();
+                    return false;
+                }
+            }
+            catch
+            {
+                 transaccion.Rollback();
+                throw;
+            }
         }
+
 
 
         public async Task<bool> DeleteProductoAsync(int id)

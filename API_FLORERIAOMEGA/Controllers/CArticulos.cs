@@ -65,7 +65,7 @@ namespace API_FLORERIAOMEGA.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateProducto(int id, [FromBody] MArticulos producto)
+        public async Task<IActionResult> UpdateProducto(int id, [FromBody] MArticulosDTO producto)
         {
             if (producto == null || producto.idArticulo != id)
                 return BadRequest("Datos inválidos.");
