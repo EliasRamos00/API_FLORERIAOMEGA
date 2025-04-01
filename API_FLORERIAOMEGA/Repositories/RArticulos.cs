@@ -37,29 +37,55 @@ namespace API_FLORERIAOMEGA.Repositories
             return await conexion.QueryFirstOrDefaultAsync<MArticulos>(query, new { Id = id });
         }
 
-        public async Task<int> CrearProductoAsync(MArticulos producto)
+        public async Task<int> CrearProductoAsync(MArticulosDTO producto)
         {
-            var query = @"
-                INSERT INTO Articulos (Foto, Color, Descripcion, Tamanio, CodigoBarras, IdCategoria)
-                VALUES (@Foto, @Color, @Descripcion, @Tamanio, @CodigoBarras, @IdCategoria);
-                SELECT LAST_INSERT_ID();"; // Obtenemos el último ID generado
+            using var conexion = _dbService.CrearConexion();
+            conexion.Open();
+            using var transaccion =  conexion.BeginTransaction();
 
-            // Usamos ExecuteScalarAsync para obtener el valor del ID
-            using (var conexion = _dbService.CrearConexion())
+            try
             {
-                var id = await conexion.ExecuteScalarAsync<int>(query, new
-                {
-                    Foto = producto.Foto,
-                    Color = producto.Color,
-                    Descripcion = producto.Descripcion,
-                    Tamanio = producto.Tamanio,
-                    CodigoBarras = producto.CodigoBarras,
-                    IdCategoria = producto.IdCategoria
-                });
+                var queryArticulo = @"
+            INSERT INTO Articulos (Foto, Color, Descripcion, Tamanio, CodigoBarras, IdCategoria)
+            VALUES (@Foto, @Color, @Descripcion, @Tamanio, @CodigoBarras, @IdCategoria);
+            SELECT LAST_INSERT_ID();"; // Obtenemos el último ID generado
 
-                return id; // Devuelve el ID como un entero
+                // Insertamos el artículo y obtenemos su ID
+                var idArticulo = await conexion.ExecuteScalarAsync<int>(queryArticulo, new
+                {
+                    producto.Foto,
+                    producto.Color,
+                    producto.Descripcion,
+                    producto.Tamanio,
+                    producto.CodigoBarras,
+                    producto.IdCategoria
+                }, transaction: transaccion);
+
+                var queryInventario = @"
+            INSERT INTO Inventario (idArticulo, Stock, Min, Max, PrecioVenta, PrecioCompra)
+            VALUES (@idArticulo, @Stock, @Min, @Max, @PrecioVenta, @PrecioCompra);";
+
+                // Insertamos el inventario asociado al artículo
+                await conexion.ExecuteAsync(queryInventario, new
+                {
+                    idArticulo,
+                    producto.Stock,
+                    producto.Min,
+                    producto.Max,
+                    producto.PrecioVenta,
+                    producto.PrecioCompra
+                }, transaction: transaccion);
+
+                 transaccion.Commit();
+                return idArticulo; // Retorna el ID del artículo creado
+            }
+            catch
+            {
+                 transaccion.Rollback();
+                throw;
             }
         }
+
 
         public async Task<bool> UpdateProductoAsync(MArticulosDTO producto)
         {
@@ -91,7 +117,7 @@ namespace API_FLORERIAOMEGA.Repositories
                 }, transaction: transaccion);
 
                 var queryInventario = @"
-            UPDATE Inventario SET 
+            UPDATE Inventarios SET 
                 Stock = @Stock, 
                 Min = @Min, 
                 Max = @Max, 

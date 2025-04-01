@@ -46,7 +46,7 @@ namespace API_FLORERIAOMEGA.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CrearProducto([FromBody] MArticulos producto)
+        public async Task<IActionResult> CrearProducto([FromBody] MArticulosDTO producto)
         {
 
             if (producto == null)
