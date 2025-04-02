@@ -159,7 +159,9 @@ namespace API_FLORERIAOMEGA.Repositories
         public async Task<bool> DeleteProductoAsync(int id)
         {
             using var conexion = _dbService.CrearConexion();
-            var query = "DELETE FROM Articulos WHERE idArticulo = @idArticulo";
+            var query = "" +
+                "DELETE FROM Inventarios WHERE idArticulo = @idArticulo; " +
+                "DELETE FROM Articulos WHERE idArticulo = @idArticulo; ";
 
             // Ejecutamos el DELETE y verificamos cuántas filas fueron afectadas
             var filasAfectadas = await conexion.ExecuteAsync(query, new { idArticulo = id });
