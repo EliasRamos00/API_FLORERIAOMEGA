@@ -62,7 +62,7 @@ namespace API_FLORERIAOMEGA.Repositories
                 }, transaction: transaccion);
 
                 var queryInventario = @"
-            INSERT INTO Inventario (idArticulo, Stock, Min, Max, PrecioVenta, PrecioCompra)
+            INSERT INTO Inventarios (idArticulo, Stock, Min, Max, PrecioVenta, PrecioCompra)
             VALUES (@idArticulo, @Stock, @Min, @Max, @PrecioVenta, @PrecioCompra);";
 
                 // Insertamos el inventario asociado al artículo
