@@ -15,6 +15,8 @@ builder.Services.AddScoped<RCategorias>();
 builder.Services.AddScoped<RArticulos>();
 builder.Services.AddScoped<RUsuarios>();
 builder.Services.AddScoped<RVentas>();
+builder.Services.AddScoped<RHistoriales>();
+
 
 
 

@@ -13,7 +13,10 @@ namespace API_FLORERIAOMEGA.Services
 
         public DatabaseService(IConfiguration config)
         {
-            _connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");           
+            _connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");
+
+
+
         }
 
         public IDbConnection CrearConexion() => new MySqlConnection(_connectionString);

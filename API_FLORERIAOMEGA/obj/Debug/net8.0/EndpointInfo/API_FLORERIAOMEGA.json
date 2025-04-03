@@ -154,6 +154,37 @@
         }
       }
     },
+    "/api/CHistoriales": {
+      "post": {
+        "tags": [
+          "CHistoriales"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MHistoriales"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MHistoriales"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MHistoriales"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/CUsuarios": {
       "get": {
         "tags": [
@@ -332,6 +363,41 @@
           "precioCompra": {
             "type": "number",
             "format": "double",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MHistoriales": {
+        "type": "object",
+        "properties": {
+          "idHistorial": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fechaHora": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "idUsuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "accion": {
+            "type": "string",
+            "nullable": true
+          },
+          "clase": {
+            "type": "string",
+            "nullable": true
+          },
+          "antes": {
+            "type": "string",
+            "nullable": true
+          },
+          "despues": {
+            "type": "string",
             "nullable": true
           }
         },

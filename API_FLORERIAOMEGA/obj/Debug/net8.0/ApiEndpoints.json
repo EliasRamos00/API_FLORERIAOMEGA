@@ -99,6 +99,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "API_FLORERIAOMEGA.Controllers.CHistoriales",
+    "Method": "CrearProducto",
+    "RelativePath": "api/CHistoriales",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Historial",
+        "Type": "API_FLORERIAOMEGA.Models.MHistoriales",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "API_FLORERIAOMEGA.Controllers.CUsuarios",
     "Method": "GetUserPass",
     "RelativePath": "api/CUsuarios",
