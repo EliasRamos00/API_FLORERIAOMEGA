@@ -37,6 +37,14 @@ namespace API_FLORERIAOMEGA.Controllers
             return StatusCode(500, "Algo salió mal al crear el producto.");
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetAllHistoriales()
+        {
+            // Obtener el historial
+            var Historial = await _repo.ObtenerTodoHistorial();
+            return Ok(Historial );
+        }
+
 
     }
 }

@@ -16,7 +16,7 @@ namespace API_FLORERIAOMEGA.Services
             _connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");
 
 
-
+           
         }
 
         public IDbConnection CrearConexion() => new MySqlConnection(_connectionString);
