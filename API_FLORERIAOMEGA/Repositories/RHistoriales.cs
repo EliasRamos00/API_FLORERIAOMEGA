@@ -49,10 +49,10 @@ namespace API_FLORERIAOMEGA.Repositories
             }
         }
 
-        public async Task<IEnumerable<MCategorias>> ObtenerTodoHistorial()
+        public async Task<IEnumerable<MHistoriales>> ObtenerTodoHistorial()
         {
             using var conexion = _dbService.CrearConexion();
-            return await conexion.QueryAsync<MCategorias>("SELECT * FROM Historiales;");
+            return await conexion.QueryAsync<MHistoriales>("SELECT * FROM Historiales;");
         }
 
     }

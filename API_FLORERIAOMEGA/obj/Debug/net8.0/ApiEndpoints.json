@@ -115,6 +115,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "API_FLORERIAOMEGA.Controllers.CHistoriales",
+    "Method": "GetAllHistoriales",
+    "RelativePath": "api/CHistoriales",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "API_FLORERIAOMEGA.Controllers.CUsuarios",
     "Method": "GetUserPass",
     "RelativePath": "api/CUsuarios",

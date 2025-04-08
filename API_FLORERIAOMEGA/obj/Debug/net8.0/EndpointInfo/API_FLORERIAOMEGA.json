@@ -183,6 +183,16 @@
             "description": "OK"
           }
         }
+      },
+      "get": {
+        "tags": [
+          "CHistoriales"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/api/CUsuarios": {
