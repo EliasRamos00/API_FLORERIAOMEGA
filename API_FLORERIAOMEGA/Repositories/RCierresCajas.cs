@@ -47,7 +47,7 @@ namespace API_FLORERIAOMEGA.Repositories
             return null;
         }
 
-        internal async Task<int> ObtenerTotalSistema(int idCaja, int idSucursal)
+        internal async Task<decimal> ObtenerTotalSistema(int idCaja, int idSucursal)
         {
             using var conexion = _dbService.CrearConexion();
             var query = ("SELECT \r\n" +
@@ -59,7 +59,7 @@ namespace API_FLORERIAOMEGA.Repositories
                 "AND V.FechaHora BETWEEN @FechaIni AND @FechaFin" +
                 "\r\nGROUP BY idCaja");
 
-            var TotalSumado = await conexion.ExecuteScalarAsync<int>(query, 
+            var TotalSumado = await conexion.ExecuteScalarAsync<decimal>(query, 
             new
             {
                 FechaIni = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day,0,0,0),
