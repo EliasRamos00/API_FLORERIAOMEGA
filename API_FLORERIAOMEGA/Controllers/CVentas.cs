@@ -23,33 +23,7 @@ namespace API_FLORERIAOMEGA.Controllers
             return Ok(Ventas);
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> CrearVentas([FromBody] MVentas venta)
-        //{
-
-        //    if (venta == null)
-        //        return BadRequest("Producto no válido.");
-
-        //    // Obtener el ID recién insertado -- AQUÍ SE GUARDA EL ENCABEZADO DE LA VENTA
-        //    int id = await _repo.GuardarVenta(venta);
-
-        //    // Asignar el ID a la venta
-        //    venta.idVenta = id;
-
-        //    // AQUÍ SE GUARDA EL DETALLE DE LA VENTA
-
-        //    var idDetalle = await _repo.GuardarVentaDetalle(id);
-
-
-
-        //    if (id > 0) // Si el ID fue creado correctamente, responde con el recurso
-        //        return CreatedAtAction(nameof(GetVenta), new { id = id }, venta);
-
-        //    return StatusCode(500, "Algo salió mal al crear el producto.");
-
-        //    //AQUI VA OTRA PARTE
-
-        //}
+       
 
         [HttpPost("crear")]
         public async Task<IActionResult> CrearVentaAsync([FromBody] MVentaDTO ventaDTO)

@@ -13,9 +13,8 @@ namespace API_FLORERIAOMEGA.Services
 
         public DatabaseService(IConfiguration config)
         {
-            //_connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");
+           _connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");
 
-            _connectionString ="Server = 34.132.133.29; Database = FloreriaOmega; Uid = admin; Pwd = admin;";
 
            
         }

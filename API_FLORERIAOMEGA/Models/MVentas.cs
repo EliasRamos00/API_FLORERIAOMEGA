@@ -9,6 +9,8 @@
         public int Vendedor { get; set; }
         public int tieneFactura { get; set; }
         public int idSucursal { get; set; }
+        public int? idCaja { get; set; }
+
 
 
     }

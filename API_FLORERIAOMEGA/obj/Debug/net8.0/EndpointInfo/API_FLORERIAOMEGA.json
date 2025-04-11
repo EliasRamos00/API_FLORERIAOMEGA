@@ -164,6 +164,67 @@
             "description": "OK"
           }
         }
+      },
+      "post": {
+        "tags": [
+          "CCierresCajas"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MCierresCajas"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MCierresCajas"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MCierresCajas"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/CCierresCajas/totalsistema/{idCaja}/{idSucursal}": {
+      "get": {
+        "tags": [
+          "CCierresCajas"
+        ],
+        "parameters": [
+          {
+            "name": "idCaja",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "idSucursal",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/api/CHistoriales": {
@@ -351,6 +412,40 @@
         },
         "additionalProperties": false
       },
+      "MCierresCajas": {
+        "type": "object",
+        "properties": {
+          "idCierreCaja": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "hora": {
+            "type": "string",
+            "format": "date-span"
+          },
+          "idUsuario": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalSistema": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalFisico": {
+            "type": "number",
+            "format": "double"
+          },
+          "idCaja": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "MHistoriales": {
         "type": "object",
         "properties": {
@@ -450,6 +545,11 @@
           "idSucursal": {
             "type": "integer",
             "format": "int32"
+          },
+          "idCaja": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
           }
         },
         "additionalProperties": false

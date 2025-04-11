@@ -109,6 +109,43 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "API_FLORERIAOMEGA.Controllers.CCierresCajas",
+    "Method": "PostCierreCaja",
+    "RelativePath": "api/CCierresCajas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cierreCajas",
+        "Type": "API_FLORERIAOMEGA.Models.MCierresCajas",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_FLORERIAOMEGA.Controllers.CCierresCajas",
+    "Method": "GetProductosInventario",
+    "RelativePath": "api/CCierresCajas/totalsistema/{idCaja}/{idSucursal}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idCaja",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "idSucursal",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "API_FLORERIAOMEGA.Controllers.CHistoriales",
     "Method": "CrearProducto",
     "RelativePath": "api/CHistoriales",
