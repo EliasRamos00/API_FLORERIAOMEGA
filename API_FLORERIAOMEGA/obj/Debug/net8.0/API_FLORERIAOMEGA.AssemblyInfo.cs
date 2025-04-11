@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("API_FLORERIAOMEGA")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6f5b9d2742da7f1a2ea79de48bf7c4481f12ea02")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c8fc95cd7611c9c46241c833388129f6738f7fb")]
 [assembly: System.Reflection.AssemblyProductAttribute("API_FLORERIAOMEGA")]
 [assembly: System.Reflection.AssemblyTitleAttribute("API_FLORERIAOMEGA")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

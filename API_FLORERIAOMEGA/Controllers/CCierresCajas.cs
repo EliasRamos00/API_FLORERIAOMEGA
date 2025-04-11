@@ -26,7 +26,9 @@ namespace API_FLORERIAOMEGA.Controllers
         public async Task<IActionResult> GetProductosInventario(int idCaja, int idSucursal)
         {
             var total = await _repo.ObtenerTotalSistema(idCaja,idSucursal);
-            return Ok(total);
+            var dTO = new GenericMessageDTO { data = total.ToString("C2") };
+
+            return Ok(dTO);
         }
 
 
